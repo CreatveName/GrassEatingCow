@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    private Rigidbody2D player;
+    public CharStats charStats;
     public Animator animator;
-
-    Vector2 movement;
+    public int playerNumber = 1;
+    public float moveSpeed;
+    private float eatTime;
+    private Vector2 movement;
+    private Rigidbody2D player;
+    
 
     void Start() 
     {
         player = GetComponent<Rigidbody2D>();
     }
+    private void Awake() 
+    {
+        moveSpeed = charStats.moveSpeed;
+        eatTime = charStats.eatSpeed;
+    }
     void Update()
     {
-
-        Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
-        player.AddForce(direction, ForceMode2D.Force);
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -29,4 +33,10 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
         */
     }
+
+    private void FixedUpdate() 
+    {
+        player.AddForce(new Vector2(movement.x, movement.y) * moveSpeed, ForceMode2D.Force);
+    }
+
 }
