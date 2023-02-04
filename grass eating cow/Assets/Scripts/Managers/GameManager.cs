@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public MilkManager[] players;
     public GameObject[] milkProducer;
 
+    //MAKE SINGLETON AND TEST TO SEE IF IT WORKS
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < players.Length; i++)
         {
-            players[i].instance = Instantiate(milkProducer[players[i].playerNumber], players[i].spawnPoint.position, players[i].spawnPoint.rotation) as GameObject;
+            int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
+            players[i].instance = Instantiate(milkProducer[selectedCharacter], players[i].spawnPoint.position, players[i].spawnPoint.rotation) as GameObject;
             players[i].playerNumber = i + 1;
             players[i].Setup();
         }
