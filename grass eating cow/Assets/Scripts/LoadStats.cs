@@ -6,12 +6,13 @@ using TMPro;
 
 public class LoadStats : MonoBehaviour
 {
-    public CharStats charStat;
+    [SerializeField]
+    private CharStats charStat;
     public TextMeshProUGUI nameT;
     public TextMeshProUGUI speedT;
     public TextMeshProUGUI eatT;
     public TextMeshProUGUI scoreT;
-    public SpriteRenderer picCool;
+    public Image picCool;
 
     void Start()
     {

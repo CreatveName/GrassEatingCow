@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int playerNumber = 1;
     public CharStats charStats;
     public Animator animator;
-    public int playerNumber = 1;
     public float moveSpeed;
-    private float eatTime;
     private Vector2 movement;
     private Rigidbody2D player;
     
@@ -20,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private void Awake() 
     {
         moveSpeed = charStats.moveSpeed;
-        eatTime = charStats.eatSpeed;
     }
     void Update()
     {

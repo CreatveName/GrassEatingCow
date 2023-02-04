@@ -4,33 +4,42 @@ using UnityEngine;
 
 public class PlayerAbility : MonoBehaviour
 {
-    public CharStats charStats;
+    public int playerNumber = 1;
+    [SerializeField]
+    private CharStats charStats;
     private PlayerController player;
+    private PlayerScore score;
     private bool isEating;
     private float eatTime;
+    [SerializeField]
+    private int scoreStored;
+    public bool onScoreZone;
 
 
     private void Awake() 
     {
         eatTime = charStats.eatSpeed;
+        scoreStored = 0;
     }
     void Start()
     {
         player = GetComponent<PlayerController>();
+        score = GetComponent<PlayerScore>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isEating)
+        if (Input.GetKeyDown(KeyCode.Space) && !onScoreZone && !isEating)
         {
-            StartCoroutine(StartEat()); //this will be in inherited scripts later
+            StartCoroutine(StartEat()); 
         }
-        /*
         else if(Input.GetKeyDown(KeyCode.Space) && onScoreZone && !isEating)
         {
-            //score code here?
+            score.currentScore += scoreStored;
+            score.scored = true;
+            scoreStored = 0;
         }
-        */
+    
     }
 
     IEnumerator StartEat()
@@ -39,6 +48,7 @@ public class PlayerAbility : MonoBehaviour
         //animator.SetBool("Eat", true);
         float speed = player.moveSpeed;
         player.moveSpeed = 0;
+        scoreStored++;
         yield return new WaitForSeconds(eatTime);
         isEating = false;
         player.moveSpeed = speed;

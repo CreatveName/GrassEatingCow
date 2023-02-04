@@ -10,6 +10,7 @@ public class CharStats : ScriptableObject
     public int eatSpeed;
     public int milkScore;
     public Sprite charLook;
+    public int spawnNum;
 
     public void PrintMessage()
     {
