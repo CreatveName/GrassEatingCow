@@ -27,4 +27,16 @@ public class MilkManager
 
         coloredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(playerColor) + ">PLAYER " + playerNumber + "</color>";
     }
+
+    public void DisableControl()
+    {
+        milkAbility.enabled = false;
+        milkMovement.enabled = false;
+    }
+
+    public void EnableControl()
+    {
+        milkAbility.enabled = true;
+        milkMovement.enabled = true;
+    }
 }
