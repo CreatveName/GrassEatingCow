@@ -10,11 +10,15 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     private Vector2 movement;
     private Rigidbody2D player;
+    private string hAxis;
+    private string vAxis;
     
 
     void Start() 
     {
         player = GetComponent<Rigidbody2D>();
+        hAxis = "Horizontal" + playerNumber;
+        vAxis = "Vertical" + playerNumber;
     }
     private void Awake() 
     {
@@ -22,8 +26,8 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw(hAxis);
+        movement.y = Input.GetAxisRaw(vAxis);
 
         /*
         animator.SetFloat("Horizontal", movement.x);
