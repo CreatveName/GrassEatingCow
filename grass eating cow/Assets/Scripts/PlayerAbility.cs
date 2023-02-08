@@ -14,6 +14,7 @@ public class PlayerAbility : MonoBehaviour
     [SerializeField]
     private int scoreStored;
     public bool onScoreZone;
+    private string eatButton;
 
 
     private void Awake() 
@@ -25,15 +26,16 @@ public class PlayerAbility : MonoBehaviour
     {
         player = GetComponent<PlayerController>();
         score = GetComponent<PlayerScore>();
+        eatButton = "Fire" + playerNumber;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !onScoreZone && !isEating)
+        if (Input.GetButton(eatButton) && !onScoreZone && !isEating)
         {
             StartCoroutine(StartEat()); 
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && onScoreZone && !isEating)
+        else if(Input.GetButton(eatButton) && onScoreZone && !isEating)
         {
             score.currentScore += scoreStored;
             score.scored = true;
