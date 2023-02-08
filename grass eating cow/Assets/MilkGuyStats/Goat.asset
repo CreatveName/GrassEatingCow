@@ -15,6 +15,5 @@ MonoBehaviour:
   charName: Goat
   moveSpeed: 35
   eatSpeed: 2
-  milkScore: 2
+  milkScore: 5
   charLook: {fileID: 21300000, guid: 90645714c09cdc141b8863f767d9124a, type: 3}
-  spawnNum: 1

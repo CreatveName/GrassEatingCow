@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //plays games from start menu
+        SceneManager.LoadScene("CharacterSelect"); //plays games from start menu
       
     }
     public void QuitGame()

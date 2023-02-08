@@ -1424,6 +1424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Almond
       objectReference: {fileID: 0}
+    - target: {fileID: 1486734699178654465, guid: c155fb0a9b230cb41a6655241b6946b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c155fb0a9b230cb41a6655241b6946b2, type: 3}
 --- !u!1001 &6705104306584084698
