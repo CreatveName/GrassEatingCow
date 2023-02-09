@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
         yield return endWait;
         messageText.text = string.Empty;
         //CANVAS/END MENU POP UP CODE HERE
-
     }
 
 

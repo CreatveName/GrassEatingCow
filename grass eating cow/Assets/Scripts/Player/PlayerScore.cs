@@ -13,6 +13,7 @@ public class PlayerScore : MonoBehaviour
     public int currentScore;
     public bool scored;
     private int milkScore;
+    public int totalScore;
 
 
     private void Awake() 
@@ -29,8 +30,9 @@ public class PlayerScore : MonoBehaviour
     {
         if(scored)
         {
-            int totalScore = currentScore * milkScore;
+            totalScore = currentScore * milkScore;
             scoreText.text = "Score: " + totalScore.ToString();
+            PlayerPrefs.SetInt("totalScore", totalScore);
             scored = false;
         }
     }
