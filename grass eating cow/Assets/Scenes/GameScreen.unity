@@ -37459,6 +37459,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629139501}
   m_CullTransparentMesh: 1
+--- !u!1 &1735395377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735395379}
+  - component: {fileID: 1735395378}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1735395378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735395377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5767b9c9c5afea147965b036e010ede7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodtoSpawn:
+  - {fileID: 7212925877981940856, guid: 0e4bacbc53016404eb2de76f3cd49be5, type: 3}
+  - {fileID: 4209763301553131150, guid: 825d86c304374e54bb41643f10b7945d, type: 3}
+  - {fileID: 8030976488381754545, guid: 093a91360b70f2b4faa146d9b3d432a9, type: 3}
+  - {fileID: 7308006922971118086, guid: a1b5e10e6b9b54d4aab24d947276a0f7, type: 3}
+  - {fileID: 5580220339071872655, guid: 4bc910d00dc0cae43a23aae215caa763, type: 3}
+  maxX: 9
+  minX: -9
+  maxY: 5
+  minY: -5
+  timeBetweenSpawn: 10
+--- !u!4 &1735395379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735395377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1962057728
 GameObject:
   m_ObjectHideFlags: 0
