@@ -5,12 +5,15 @@ using UnityEngine;
 public class FoodMultiplier : MonoBehaviour
 {
     private Collider2D coll;
+    private SpriteRenderer sprite;
     [SerializeField]
     private Food food;
 
     private void Start() 
     {
         coll = GetComponent<CircleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        sprite.sprite = food.foodLook;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -20,12 +23,15 @@ public class FoodMultiplier : MonoBehaviour
         if(boolTest)
         {
             boolTest.foodMultiplier = food.value;
-
-            if(boolTest.isEating)
-            {
-                Destroy(gameObject, 0f);
-            }
         }
 
+    }
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
+        if(boolTest.isEating)
+        {
+            Destroy(gameObject, 0f);
+        }
     }
 }

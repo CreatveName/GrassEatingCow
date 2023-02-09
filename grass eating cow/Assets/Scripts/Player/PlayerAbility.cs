@@ -40,7 +40,7 @@ public class PlayerAbility : MonoBehaviour
         }
         else if(Input.GetButton(eatButton) && onScoreZone && !isEating)
         {
-            score.currentScore += scoreStored * foodMultiplier;
+            score.currentScore += scoreStored;
             score.scored = true;
             scoreStored = 0;
         }
@@ -53,10 +53,11 @@ public class PlayerAbility : MonoBehaviour
         animator.SetBool("isEating", true);
         float speed = player.moveSpeed; //preserves original movespeed (because we have different movespeeds for different characters)
         player.moveSpeed = 0;
-        scoreStored++;
+        scoreStored = 1 * foodMultiplier;
         yield return new WaitForSeconds(eatTime);
         animator.SetBool("isEating", false);
         isEating = false;
+        foodMultiplier = 1;
         player.moveSpeed = speed; //returns movespeed back to normal once done eating
     }
 }

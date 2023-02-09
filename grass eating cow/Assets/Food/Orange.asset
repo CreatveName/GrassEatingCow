@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: 
   description: 
-  foodLook: {fileID: 0}
-  value: 100
+  foodLook: {fileID: 21300000, guid: edaf40043238c354989ea1e3b51737dc, type: 3}
+  value: 8
