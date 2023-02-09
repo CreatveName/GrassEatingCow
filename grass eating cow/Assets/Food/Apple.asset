@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: b9a47a0ed405a754c9c90c0d571d0e91, type: 3}
   m_Name: Apple
-  m_EditorClassIdentifier: Assembly-CSharp::FoodObjects
+  m_EditorClassIdentifier: 
   foodName: Apple
-  description: 2x multiplier
-  foodLook: {fileID: 21300000, guid: b789e3d1260ee054d8d5e277715a5ac4, type: 3}
-  value: 200
+  description: 
+  foodLook: {fileID: 0}
+  value: 100

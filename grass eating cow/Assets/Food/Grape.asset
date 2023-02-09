@@ -11,4 +11,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9a47a0ed405a754c9c90c0d571d0e91, type: 3}
   m_Name: Grape
-  m_EditorClassIdentifier: Assembly-CSharp::FoodObjects
+  m_EditorClassIdentifier: 
+  foodName: 
+  description: 
+  foodLook: {fileID: 0}
+  value: 100
