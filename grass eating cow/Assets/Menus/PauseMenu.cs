@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }   
-        
+        // Stops the UI in order to pause the game
         void Pause()
         {
             PauseMenuUI.SetActive(true);
@@ -37,12 +37,14 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
     }
+    // Quit's the game and closes the window
     public void QuitGame()
     {
         Application.Quit();
         Debug.Log("Goodbye :(");
 
     }
+    //Reloads the Scene or Heads to the Menu
     public void LoadMenu()
     {
         SceneManager.LoadScene("Main Menu");

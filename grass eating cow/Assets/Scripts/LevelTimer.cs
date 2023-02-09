@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelTimer : MonoBehaviour
 {
+    
     public float timeLeft = 60;
     public float timer;
     public bool timerStarted = false;
@@ -26,6 +27,7 @@ public class LevelTimer : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(timer);
         }
         
+        // Displays the time is up and assists with the Game Over Canvas
         if (timer <= 0)
         {
             Debug.Log("Time's up!");

@@ -9,7 +9,7 @@ public class FoodMultiplier : MonoBehaviour
     private int spawnLife;
     [SerializeField]
     private Food food;
-
+    // Renders the sprites for the food to spawn in and be destroyed after a while
     private void Start() 
     {
         coll = GetComponent<CircleCollider2D>();
@@ -30,6 +30,7 @@ public class FoodMultiplier : MonoBehaviour
         }
 
     }
+    // When the object interacts with the player character and is eaten it destroys it causing it to dissapear.
     private void OnTriggerStay2D(Collider2D other) 
     {
         PlayerAbility boolTest = other.GetComponent<PlayerAbility>();

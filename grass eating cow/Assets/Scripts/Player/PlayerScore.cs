@@ -15,7 +15,7 @@ public class PlayerScore : MonoBehaviour
     private int milkScore;
     public int totalScore;
 
-
+    
     private void Awake() 
     {
         currentScore = 0;
@@ -25,7 +25,7 @@ public class PlayerScore : MonoBehaviour
     {
         milkScore = charStat.milkScore;
     }
-
+    // Keeps track of the total score which is current score of playing + the score added from producing milk
     void Update()
     {
         if(scored)
