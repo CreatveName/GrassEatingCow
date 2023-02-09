@@ -9,6 +9,6 @@ public class Food: ScriptableObject
     public string foodName;
     public string description;
     public Sprite foodLook;
-    public float value = 100;
+    public int value = 100;
 
 }

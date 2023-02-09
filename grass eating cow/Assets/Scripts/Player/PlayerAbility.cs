@@ -9,13 +9,14 @@ public class PlayerAbility : MonoBehaviour
     private CharStats charStats;
     private PlayerController player;
     private PlayerScore score;
-    private bool isEating;
+    public bool isEating;
     private float eatTime;
     [SerializeField]
     private int scoreStored;
     public bool onScoreZone;
     private string eatButton;
     private Animator animator;
+    public int foodMultiplier;
 
 
     private void Awake() 
@@ -39,7 +40,7 @@ public class PlayerAbility : MonoBehaviour
         }
         else if(Input.GetButton(eatButton) && onScoreZone && !isEating)
         {
-            score.currentScore += scoreStored;
+            score.currentScore += scoreStored * foodMultiplier;
             score.scored = true;
             scoreStored = 0;
         }
