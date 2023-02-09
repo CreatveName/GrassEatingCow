@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 8606527913131828918}
   - component: {fileID: 8606527913131828914}
   - component: {fileID: 8606527913131828915}
+  - component: {fileID: -7260629157245783340}
   m_Layer: 0
   m_Name: goat
   m_TagString: Untagged
@@ -419,7 +420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   charStats: {fileID: 11400000, guid: ee065d1135434f9428cb06808ae71481, type: 2}
-  animator: {fileID: 0}
   moveSpeed: 0
 --- !u!114 &8606527913131828914
 MonoBehaviour:
@@ -437,6 +437,7 @@ MonoBehaviour:
   scoreText: {fileID: 3620015510620068869}
   currentScore: 0
   scored: 0
+  totalScore: 0
 --- !u!114 &8606527913131828915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,3 +454,23 @@ MonoBehaviour:
   charStats: {fileID: 11400000, guid: ee065d1135434f9428cb06808ae71481, type: 2}
   scoreStored: 0
   onScoreZone: 0
+--- !u!95 &-7260629157245783340
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606527913131828925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af76d760dc2950e449bc1bef4696f051, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
