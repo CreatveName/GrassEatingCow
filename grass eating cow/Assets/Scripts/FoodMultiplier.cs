@@ -6,6 +6,7 @@ public class FoodMultiplier : MonoBehaviour
 {
     private Collider2D coll;
     private SpriteRenderer sprite;
+    private int spawnLife;
     [SerializeField]
     private Food food;
 
@@ -14,6 +15,9 @@ public class FoodMultiplier : MonoBehaviour
         coll = GetComponent<CircleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         sprite.sprite = food.foodLook;
+        spawnLife = food.spawnTime;
+
+        Destroy(gameObject, spawnLife);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -34,4 +38,5 @@ public class FoodMultiplier : MonoBehaviour
             Destroy(gameObject, 0f);
         }
     }
+
 }

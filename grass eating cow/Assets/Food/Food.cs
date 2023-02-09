@@ -10,5 +10,6 @@ public class Food: ScriptableObject
     public string description;
     public Sprite foodLook;
     public int value = 100;
+    public int spawnTime;
 
 }

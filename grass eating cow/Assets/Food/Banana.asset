@@ -16,3 +16,4 @@ MonoBehaviour:
   description: 
   foodLook: {fileID: 21300000, guid: dd7613120769dab4393816e4e41254d0, type: 3}
   value: 12
+  spawnTime: 5
