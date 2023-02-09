@@ -15,6 +15,7 @@ public class PlayerAbility : MonoBehaviour
     private int scoreStored;
     public bool onScoreZone;
     private string eatButton;
+    private Animator animator;
 
 
     private void Awake() 
@@ -26,6 +27,7 @@ public class PlayerAbility : MonoBehaviour
     {
         player = GetComponent<PlayerController>();
         score = GetComponent<PlayerScore>();
+        animator = GetComponent<Animator>();
         eatButton = "Fire" + playerNumber;
     }
 
@@ -47,12 +49,13 @@ public class PlayerAbility : MonoBehaviour
     IEnumerator StartEat()
     {
         isEating = true;
-        //animator.SetBool("Eat", true);
-        float speed = player.moveSpeed;
+        animator.SetBool("isEating", true);
+        float speed = player.moveSpeed; //preserves original movespeed (because we have different movespeeds for different characters)
         player.moveSpeed = 0;
         scoreStored++;
         yield return new WaitForSeconds(eatTime);
+        animator.SetBool("isEating", false);
         isEating = false;
-        player.moveSpeed = speed;
+        player.moveSpeed = speed; //returns movespeed back to normal once done eating
     }
 }

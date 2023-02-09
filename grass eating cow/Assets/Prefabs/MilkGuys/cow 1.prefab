@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4118101473993021060}
   - component: {fileID: 4118101473993021056}
   - component: {fileID: 4118101473993021057}
+  - component: {fileID: 2546021653521059729}
   m_Layer: 0
   m_Name: cow 1
   m_TagString: Untagged
@@ -99,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   charStats: {fileID: 11400000, guid: 115719a3ccf4cc442b4865fe2b81592f, type: 2}
-  animator: {fileID: 0}
   moveSpeed: 0
 --- !u!114 &4118101473993021056
 MonoBehaviour:
@@ -117,6 +117,7 @@ MonoBehaviour:
   scoreText: {fileID: 8964986925358312503}
   currentScore: 0
   scored: 0
+  totalScore: 0
 --- !u!114 &4118101473993021057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +134,26 @@ MonoBehaviour:
   charStats: {fileID: 11400000, guid: 115719a3ccf4cc442b4865fe2b81592f, type: 2}
   scoreStored: 0
   onScoreZone: 0
+--- !u!95 &2546021653521059729
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118101473993021071}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af76d760dc2950e449bc1bef4696f051, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4118101474642699790
 GameObject:
   m_ObjectHideFlags: 0
