@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void RestartLevel()
     {
-        
+        SceneManager.LoadScene("GameScreen"); //temporary until we add more levels
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MainMenu()
     {
-        
+        SceneManager.LoadScene("Main Menu");
     }
 }
