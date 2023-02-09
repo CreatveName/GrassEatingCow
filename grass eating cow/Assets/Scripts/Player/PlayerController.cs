@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private string hAxis;
     private string vAxis;
     
-
+    
     void Start() 
     {
         player = GetComponent<Rigidbody2D>();
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         moveSpeed = charStats.moveSpeed;
     }
+    // Tracks the players X and Y values and updates it constantly.
     void Update()
     {
         movement.x = Input.GetAxisRaw(hAxis);
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
         */
     }
-
+    // With the new location of X and Y it allows the character to move based off of it's base movespeed.   
     private void FixedUpdate() 
     {
         player.AddForce(new Vector2(movement.x, movement.y) * moveSpeed, ForceMode2D.Force);

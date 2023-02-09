@@ -14,6 +14,7 @@ public class MilkManager
     private PlayerController milkMovement;
     private PlayerAbility milkAbility;
 
+    // Movement and abilities dependent on player character.
     public void Setup()
     {
         milkMovement = instance.GetComponent<PlayerController>();
@@ -28,12 +29,13 @@ public class MilkManager
         coloredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(playerColor) + ">PLAYER " + playerNumber + "</color>";
     }
 
+    // Disables the player from moving while producing milk
     public void DisableControl()
     {
         milkAbility.enabled = false;
         milkMovement.enabled = false;
     }
-
+    // Re-enables control of the player after they finish producing milk.
     public void EnableControl()
     {
         milkAbility.enabled = true;

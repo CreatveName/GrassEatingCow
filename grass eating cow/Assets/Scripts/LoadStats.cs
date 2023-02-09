@@ -6,6 +6,7 @@ using TMPro;
 
 public class LoadStats : MonoBehaviour
 {
+    // TextMesh GUI for the character selection screen that displays the stats of each animal.
     [SerializeField]
     private CharStats charStat;
     public TextMeshProUGUI nameT;

@@ -18,7 +18,7 @@ public class PlayerAbility : MonoBehaviour
     private Animator animator;
     public int foodMultiplier;
 
-
+    // Eat time depends on the character that was selected from the character. 
     private void Awake() 
     {
         eatTime = charStats.eatSpeed;
@@ -31,7 +31,7 @@ public class PlayerAbility : MonoBehaviour
         animator = GetComponent<Animator>();
         eatButton = "Fire" + playerNumber;
     }
-
+    // The player starts to eat grass.
     void Update()
     {
         if (Input.GetButton(eatButton) && !onScoreZone && !isEating)
@@ -46,7 +46,7 @@ public class PlayerAbility : MonoBehaviour
         }
     
     }
-
+    
     IEnumerator StartEat()
     {
         isEating = true;
