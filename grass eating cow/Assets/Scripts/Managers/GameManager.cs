@@ -10,16 +10,19 @@ public class GameManager : MonoBehaviour
     public LevelTimer timer;
     public TextMeshProUGUI messageText;  
     public TextMeshProUGUI timerText; 
+    public TextMeshProUGUI gameOverText; 
     public float startDelay = 3f;         
     public float endDelay = 3f;   
     private WaitForSeconds startWait;     
     private WaitForSeconds endWait;  
     private bool levelStarted;
+    public Canvas gameOver;
 
     void Start()
     {
         startWait = new WaitForSeconds(startDelay);
         endWait = new WaitForSeconds(endDelay);
+        gameOver.enabled = false;
         SpawnAllPlayers();
         StartCoroutine(LevelStart());
     }
@@ -76,10 +79,12 @@ public class GameManager : MonoBehaviour
             players[i].DisableControl();
         }
         messageText.text = "Time's Up!";
+        gameOverText.text = "Final Score: " + PlayerPrefs.GetInt("totalScore").ToString();
         timerText.text = string.Empty;
 
         yield return endWait;
         messageText.text = string.Empty;
+        gameOver.enabled = true;
         //CANVAS/END MENU POP UP CODE HERE
     }
 
