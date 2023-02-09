@@ -22,13 +22,15 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+    }   
+        
         void Pause()
         {
             PauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameisPaused = true;
         }
-    }
+    
 
   public  void Resume()
     {
