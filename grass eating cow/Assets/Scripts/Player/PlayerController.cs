@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public int playerNumber = 1;
     public CharStats charStats;
-    public Animator animator;
+    private Animator animator;
     public float moveSpeed;
     private Vector2 movement;
     private Rigidbody2D player;
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Start() 
     {
         player = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         hAxis = "Horizontal" + playerNumber;
         vAxis = "Vertical" + playerNumber;
     }

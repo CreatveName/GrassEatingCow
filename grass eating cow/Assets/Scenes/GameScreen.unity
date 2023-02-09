@@ -238,9 +238,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 165205579}
     - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+      propertyPath: players.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
       propertyPath: players.Array.data[0].spawnPoint
       value: 
       objectReference: {fileID: 1148636564}
+    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+      propertyPath: players.Array.data[1].spawnPoint
+      value: 
+      objectReference: {fileID: 1148636564}
+    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+      propertyPath: players.Array.data[1].playerColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+      propertyPath: players.Array.data[1].playerColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+      propertyPath: players.Array.data[1].playerColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
 --- !u!1 &127215732
