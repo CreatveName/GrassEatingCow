@@ -9,16 +9,23 @@ public class LoadStats : MonoBehaviour
     // TextMesh GUI for the character selection screen that displays the stats of each animal.
     [SerializeField]
     private CharStats charStat;
-    public TextMeshProUGUI nameT;
-    public TextMeshProUGUI speedT;
-    public TextMeshProUGUI eatT;
-    public TextMeshProUGUI scoreT;
-    public Image picCool;
+    [SerializeField]
+    private TextMeshProUGUI nameT;
+    [SerializeField]
+    private TextMeshProUGUI speedT;
+    [SerializeField]
+    private TextMeshProUGUI eatT;
+    [SerializeField]
+    private TextMeshProUGUI scoreT;
+    [SerializeField]
+    private TextMeshProUGUI stomachS;
+    [SerializeField]
+    private Image picCool;
+    
 
-    void Start()
+    public void LoadStat()
     {
 	    DisplayStats();
-	    charStat.PrintMessage();
     }
 
     void DisplayStats()
@@ -27,6 +34,7 @@ public class LoadStats : MonoBehaviour
         speedT.text = "Speed: " + charStat.moveSpeed;
         eatT.text = "Eating Speed: " + charStat.eatSpeed;
         scoreT.text = "Milk Score: " + charStat.milkScore;
+        stomachS.text = "Stomach: " + charStat.stomachSpace;
         picCool.sprite = charStat.charLook;
     }
 }
