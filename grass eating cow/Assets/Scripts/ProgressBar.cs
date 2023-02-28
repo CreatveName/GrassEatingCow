@@ -27,6 +27,7 @@ public class ProgressBar : MonoBehaviour
     // Adds Progress to the bar
     public void IncrementProgress(int newProgress)
     {
+        
         targetProgress = slider.value + newProgress;
     }
 }
