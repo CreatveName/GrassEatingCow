@@ -30,6 +30,7 @@ public class PlayerScore : MonoBehaviour
     {
         if(scored)
         {
+            SoundManagerScript.PlaySound("bell");
             totalScore = currentScore * milkScore;
             scoreText.text = "Score: " + totalScore.ToString();
             PlayerPrefs.SetInt("totalScore", totalScore);
