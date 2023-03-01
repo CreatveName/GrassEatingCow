@@ -7,22 +7,28 @@ public class PlayerAbility : MonoBehaviour
     public int playerNumber = 1;
     [SerializeField]
     private CharStats charStats;
+    [SerializeField]
+    private ProgressBar slider;
     private PlayerController player;
     private PlayerScore score;
     public bool isEating;
     private float eatTime;
-    [SerializeField]
     private int scoreStored;
     public bool onScoreZone;
     private string eatButton;
     private Animator animator;
     public int foodMultiplier;
+    private bool isFull;
+    private int stomachLvl; //cannot just use scoreStored because it can grow based on different food items :(
 
     // Eat time depends on the character that was selected from the character. 
     private void Awake() 
     {
         eatTime = charStats.eatSpeed;
         scoreStored = 0;
+        foodMultiplier = 1;
+        stomachLvl = 0;
+        slider.sliderMax = charStats.stomachSpace;
     }
     void Start()
     {
@@ -34,7 +40,7 @@ public class PlayerAbility : MonoBehaviour
     // The player starts to eat grass.
     void Update()
     {
-        if (Input.GetButton(eatButton) && !onScoreZone && !isEating)
+        if (Input.GetButton(eatButton) && !onScoreZone && !isEating && !isFull)
         {
             StartCoroutine(StartEat()); 
         }
@@ -43,6 +49,16 @@ public class PlayerAbility : MonoBehaviour
             score.currentScore += scoreStored;
             score.scored = true;
             scoreStored = 0;
+            stomachLvl = 0;
+            slider.IncrementProgress(stomachLvl);
+        }
+
+        if(stomachLvl >= charStats.stomachSpace)
+        {
+            isFull = true;
+        }else
+        {
+            isFull = false;
         }
     
     }
@@ -55,6 +71,8 @@ public class PlayerAbility : MonoBehaviour
         player.moveSpeed = 0;
         scoreStored = 1 * foodMultiplier;
         yield return new WaitForSeconds(eatTime);
+        stomachLvl++;
+        slider.IncrementProgress(stomachLvl);
         animator.SetBool("isEating", false);
         isEating = false;
         foodMultiplier = 1;

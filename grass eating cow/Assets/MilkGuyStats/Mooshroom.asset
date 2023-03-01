@@ -16,4 +16,5 @@ MonoBehaviour:
   moveSpeed: 20
   eatSpeed: 6
   milkScore: 15
-  charLook: {fileID: 21300000, guid: a41b38e8ce2251e45abcfbfb7c1f22ce, type: 3}
+  charLook: {fileID: 21300000, guid: 2fef26a096c81e740b6c720a78bf4399, type: 3}
+  stomachSpace: 10

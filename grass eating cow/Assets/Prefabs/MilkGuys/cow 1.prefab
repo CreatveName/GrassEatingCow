@@ -132,8 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   charStats: {fileID: 11400000, guid: 115719a3ccf4cc442b4865fe2b81592f, type: 2}
-  scoreStored: 0
+  slider: {fileID: 8316524212718287939}
+  isEating: 0
   onScoreZone: 0
+  foodMultiplier: 0
 --- !u!95 &2546021653521059729
 Animator:
   serializedVersion: 5
@@ -227,9 +229,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: da430f42309f0784ab6c57750ae38725, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89d7be1e23045644eb131bf88889ab6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -405,6 +407,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8964986925358312504}
+  - {fileID: 8316524212718287938}
   m_Father: {fileID: 4118101473993021067}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -474,3 +477,124 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1001 &7413879747407670790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8964986926343088168}
+    m_Modifications:
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 166.28503
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 24.190094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -83.14252
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454407, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_Name
+      value: Cow Milk Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454426, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551875918567261626, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+--- !u!224 &8316524212718287938 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+  m_PrefabInstance: {fileID: 7413879747407670790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8316524212718287939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1551875918181454405, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+  m_PrefabInstance: {fileID: 7413879747407670790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a802757025019984192b553e52f7ad05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

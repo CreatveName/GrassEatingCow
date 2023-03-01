@@ -10,9 +10,6 @@ public class CharStats : ScriptableObject
     public int eatSpeed;
     public int milkScore;
     public Sprite charLook;
+    public int stomachSpace;
 
-    public void PrintMessage()
-    {
-	    Debug.Log("The " + charName + " character has been loaded.");
-    }
 }

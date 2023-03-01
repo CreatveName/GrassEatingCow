@@ -7,6 +7,12 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] milkProducer;
     public int selectedCharacter = 0;
+    private LoadStats ldS;
+
+    private void Start() 
+    {
+        LoadCharStat();
+    }
 
     // When pressing the right button in the game selection screen it moves to pick the next character in line.
     public void NextCharacter()
@@ -14,6 +20,7 @@ public class CharacterSelection : MonoBehaviour
         milkProducer[selectedCharacter].SetActive(false);
         selectedCharacter = (selectedCharacter + 1) % milkProducer.Length;
         milkProducer[selectedCharacter].SetActive(true);
+        LoadCharStat();
     }
 
     // When pressing the left button in the game selection screen it moves to pick the previous character that was just previewed.
@@ -26,6 +33,7 @@ public class CharacterSelection : MonoBehaviour
             selectedCharacter += milkProducer.Length;
         }
         milkProducer[selectedCharacter].SetActive(true);
+        LoadCharStat();
     }
 
     // Confirms the character that is currently on your screen to be set as your playable character.
@@ -33,5 +41,11 @@ public class CharacterSelection : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
         SceneManager.LoadScene("GameScreen");
+    }
+
+    private void LoadCharStat()
+    {
+        ldS = milkProducer[selectedCharacter].GetComponent<LoadStats>();
+        ldS.LoadStat();
     }
 }
