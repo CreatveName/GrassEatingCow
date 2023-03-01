@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow Milk Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 1551875918181454426, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551875918567261626, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

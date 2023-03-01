@@ -7,15 +7,16 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     private Slider slider;
-    [SerializeField]
-    private float FillSpeed = 0.5f;
+    private float FillSpeed;
     private float targetProgress;
     public int sliderMax; //changes in player ability script which already has access to CharStats scriptable object
 
     private void Awake()
     {
-        slider = gameObject.GetComponent<Slider>();
+        slider = GetComponent<Slider>();
+        slider.value = 0;
         slider.maxValue = sliderMax;
+        FillSpeed = 0.5f;
     }
 
     // Update is called once per frame
@@ -27,7 +28,6 @@ public class ProgressBar : MonoBehaviour
     // Adds Progress to the bar
     public void IncrementProgress(int newProgress)
     {
-        
-        targetProgress = slider.value + newProgress;
+        slider.value = newProgress;
     }
 }

@@ -50,11 +50,15 @@ public class PlayerAbility : MonoBehaviour
             score.scored = true;
             scoreStored = 0;
             stomachLvl = 0;
+            slider.IncrementProgress(stomachLvl);
         }
 
         if(stomachLvl >= charStats.stomachSpace)
         {
             isFull = true;
+        }else
+        {
+            isFull = false;
         }
     
     }
