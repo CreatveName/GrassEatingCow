@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         endWait = new WaitForSeconds(endDelay);
         gameOver.enabled = false;
         
+        // Gives us the option in adding an additional player
         playerAmount = PlayerPrefs.GetInt("numOfPlayers");
 
         if(playerAmount == 2)
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnAllPlayers()
     {
+        // Processed used for spawning All players
         for (int i = 0; i < players.Count; i++)
         {
             int p2 = players[i].playerNumber + 1;
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelStart()
     {
+        // IF there is only one player it disables the useage of Player 2's control. IF there is more than one player it enables the controls for Player 2.
         for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();

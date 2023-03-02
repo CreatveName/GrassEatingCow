@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
         InvokeRepeating("Update Path", 0f, 5f);
         seeker.StartPath(rb.position, target.position, onPathComplete);
 
-
+        // Looks to always track a player with the tag "Player"
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         target = go.transform;
 
@@ -46,6 +46,7 @@ public class EnemyAI : MonoBehaviour
     }
    void Update()
     {
+        // Used to track the player character's location after a delay and chase after them.
         if (path == null)
             return;
         if(currentWaypoint >= path.vectorPath.Count)

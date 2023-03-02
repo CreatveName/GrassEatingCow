@@ -6,6 +6,7 @@ namespace BehaviorTree
 {
 public enum NodeState
     {
+        // Three states of running the behavior tree in running, success, and failure.
         RUNNING,
         SUCCESS,
         FAILURE
