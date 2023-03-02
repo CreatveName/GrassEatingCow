@@ -4,9 +4,8 @@ using UnityEngine;
 [Serializable]
 public class MilkManager
 {
-    public Color playerColor;            
-    public Transform spawnPoint;         
-    [HideInInspector] public int playerNumber;             
+    public Color playerColor;              
+    [HideInInspector] public int playerNumber = 1;             
     [HideInInspector] public int prefabNumber;         
     [HideInInspector] public string coloredPlayerText;
     [HideInInspector] public GameObject instance; 
@@ -20,8 +19,6 @@ public class MilkManager
         milkMovement = instance.GetComponent<PlayerController>();
         milkAbility = instance.GetComponent<PlayerAbility>();
         //m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
-        spawnPoint.position = Vector3.zero;
-        spawnPoint.rotation = Quaternion.identity;
         
         milkMovement.playerNumber = playerNumber;
         milkAbility.playerNumber = playerNumber;

@@ -183,11 +183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6575373610950437902, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6575373610950437902, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.070038
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6575373610950437902, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
       propertyPath: m_LocalPosition.z
@@ -267,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
       propertyPath: players.Array.data[1].playerColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}

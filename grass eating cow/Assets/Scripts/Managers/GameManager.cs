@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public MilkManager[] players;
+    //public MilkManager[] players;
     public GameObject[] milkProducer;
     public LevelTimer timer;
     public TextMeshProUGUI messageText;  
@@ -17,12 +17,25 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds endWait;  
     private bool levelStarted;
     public Canvas gameOver;
+    private int playerAmount;
+
+    public List<MilkManager> players;
+    public int selectedCharacter;
 
     void Start()
     {
         startWait = new WaitForSeconds(startDelay);
         endWait = new WaitForSeconds(endDelay);
         gameOver.enabled = false;
+        
+        playerAmount = PlayerPrefs.GetInt("numOfPlayers");
+
+        if(playerAmount == 2)
+        {
+            MilkManager m2 = new MilkManager();
+            players.Add(m2);
+        }
+
         SpawnAllPlayers();
         StartCoroutine(LevelStart());
     }
@@ -44,10 +57,13 @@ public class GameManager : MonoBehaviour
 
     private void SpawnAllPlayers()
     {
-        for (int i = 0; i < players.Length; i++)
+        for (int i = 0; i < players.Count; i++)
         {
-            int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-            players[i].instance = Instantiate(milkProducer[selectedCharacter], players[i].spawnPoint.position, players[i].spawnPoint.rotation) as GameObject;
+            int p2 = players[i].playerNumber;
+            string p =  "selectedCharacter" + p2;
+            print(p);
+            selectedCharacter = PlayerPrefs.GetInt(p);
+            players[i].instance = Instantiate(milkProducer[selectedCharacter], this.transform.position, this.transform.rotation) as GameObject;
             players[i].playerNumber = i + 1;
             players[i].Setup();
         }
@@ -55,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelStart()
     {
-        for (int i = 0; i < players.Length; i++)
+        for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();
         }
@@ -63,7 +79,7 @@ public class GameManager : MonoBehaviour
         timerText.text = string.Empty;
         yield return startWait;
 
-        for (int i = 0; i < players.Length; i++)
+        for (int i = 0; i < players.Count; i++)
         {
             players[i].EnableControl();
         }
@@ -74,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelEnd()
     {
-        for (int i = 0; i < players.Length; i++)
+        for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();
         }

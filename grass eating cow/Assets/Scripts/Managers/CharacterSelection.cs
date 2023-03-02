@@ -8,6 +8,9 @@ public class CharacterSelection : MonoBehaviour
     public GameObject[] milkProducer;
     public int selectedCharacter = 0;
     private LoadStats ldS;
+    [SerializeField]
+    private int playerNum;
+    private bool playerTwo;
 
     private void Start() 
     {
@@ -39,7 +42,7 @@ public class CharacterSelection : MonoBehaviour
     // Confirms the character that is currently on your screen to be set as your playable character.
     public void PickCharacter()
     {
-        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+        PlayerPrefs.SetInt("selectedCharacter" + playerNum.ToString(), selectedCharacter);
         SceneManager.LoadScene("GameScreen");
     }
 
@@ -48,4 +51,22 @@ public class CharacterSelection : MonoBehaviour
         ldS = milkProducer[selectedCharacter].GetComponent<LoadStats>();
         ldS.LoadStat();
     }
+
+    public void AddPlayerNum()
+    {
+        if(playerTwo)
+        {
+            PlayerPrefs.SetInt("numOfPlayers", 2);
+        }else
+        {
+            PlayerPrefs.SetInt("numOfPlayers", 1);
+        }
+            
+    }
+
+    public void PlayerT(bool l)
+    {
+        playerTwo = l;
+    }
+
 }
