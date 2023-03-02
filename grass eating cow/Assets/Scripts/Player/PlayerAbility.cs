@@ -42,7 +42,8 @@ public class PlayerAbility : MonoBehaviour
     {
         if (Input.GetButton(eatButton) && !onScoreZone && !isEating && !isFull)
         {
-            StartCoroutine(StartEat()); 
+            StartCoroutine(StartEat());
+            SoundManagerScript.PlaySound("eating");
         }
         else if(Input.GetButton(eatButton) && onScoreZone && !isEating)
         {

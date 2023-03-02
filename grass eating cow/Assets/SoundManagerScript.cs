@@ -8,6 +8,7 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip scoreSound;
     public static AudioClip eatingSound;
     static AudioSource audioSrc;
+  
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,7 +16,8 @@ public class SoundManagerScript : MonoBehaviour
 
         eatingSound = Resources.Load<AudioClip>("eating");
 
-        goatSound = Resources.Load<AudioClip>("goat");
+        // NOTE: Had issues with the sounds playing over each other (ex goat would play while cow is selected. Opted to comment it out for future reference and comeback for now everyone has a generic eating noise) 
+        //goatSound = Resources.Load<AudioClip>("goat");
 
         //dinoSound = Resources.Load<AudioClip>("dinosaur");
 
