@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //public MilkManager[] players;
+    public List<MilkManager> players;
     public GameObject[] milkProducer;
     public LevelTimer timer;
     public TextMeshProUGUI messageText;  
@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     private bool levelStarted;
     public Canvas gameOver;
     private int playerAmount;
-
-    public List<MilkManager> players;
     public int selectedCharacter;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
 
     void Start()
     {
@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
         {
             string timeString = "Time: " + timer.timePlaying.ToString("mm':'ss'.'ff");
             timerText.text = timeString;
+
+            string scoreString = "Score: " + PlayerPrefs.GetInt("totalScore");
+            scoreText.text = scoreString;
         }
 
         if(timer.timer <= 0 && levelStarted)
@@ -59,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < players.Count; i++)
         {
-            int p2 = players[i].playerNumber;
+            int p2 = players[i].playerNumber + 1;
             string p =  "selectedCharacter" + p2;
             print(p);
             selectedCharacter = PlayerPrefs.GetInt(p);

@@ -8,18 +8,16 @@ public class PlayerScore : MonoBehaviour
 {
     [SerializeField]
     private CharStats charStat;
-    [SerializeField]
-    private TextMeshProUGUI scoreText;
     public int currentScore;
     public bool scored;
     private int milkScore;
-    public int totalScore;
+    private int totalScore;
 
     
     private void Awake() 
     {
         currentScore = 0;
-        scoreText.text = "Score: " + currentScore.ToString();
+        PlayerPrefs.SetInt("combinedScore", 0);
     }
     void Start()
     {
@@ -28,12 +26,15 @@ public class PlayerScore : MonoBehaviour
     // Keeps track of the total score which is current score of playing + the score added from producing milk
     void Update()
     {
+        
         if(scored)
         {
             SoundManagerScript.PlaySound("bell");
             totalScore = currentScore * milkScore;
-            scoreText.text = "Score: " + totalScore.ToString();
-            PlayerPrefs.SetInt("totalScore", totalScore);
+            int combinedScore = totalScore + PlayerPrefs.GetInt("combinedScore");
+            PlayerPrefs.SetInt("combinedScore", combinedScore);
+            PlayerPrefs.SetInt("totalScore", PlayerPrefs.GetInt("combinedScore"));
+            currentScore = 0;
             scored = false;
         }
     }

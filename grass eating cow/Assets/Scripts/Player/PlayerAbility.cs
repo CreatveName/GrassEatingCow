@@ -19,7 +19,8 @@ public class PlayerAbility : MonoBehaviour
     private Animator animator;
     public int foodMultiplier;
     private bool isFull;
-    private int stomachLvl; //cannot just use scoreStored because it can grow based on different food items :(
+    private int stomachLvl;
+    private float scoreDelay = 0.5f;
 
     // Eat time depends on the character that was selected from the character. 
     private void Awake() 
