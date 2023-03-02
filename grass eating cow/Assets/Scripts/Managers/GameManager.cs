@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
             string timeString = "Time: " + timer.timePlaying.ToString("mm':'ss'.'ff");
             timerText.text = timeString;
 
-            string scoreString = "Score: " + PlayerPrefs.GetInt("totalScore");
+            string scoreString = "Score: " + PlayerPrefs.GetInt("combinedScore");
             scoreText.text = scoreString;
         }
 

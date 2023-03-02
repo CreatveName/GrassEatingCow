@@ -33,7 +33,6 @@ public class PlayerScore : MonoBehaviour
             totalScore = currentScore * milkScore;
             int combinedScore = totalScore + PlayerPrefs.GetInt("combinedScore");
             PlayerPrefs.SetInt("combinedScore", combinedScore);
-            PlayerPrefs.SetInt("totalScore", PlayerPrefs.GetInt("combinedScore"));
             currentScore = 0;
             scored = false;
         }
