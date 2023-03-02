@@ -21,6 +21,7 @@ namespace Pathfinding {
 		void Start()
 
 		{
+			GetComponent<AIDestinationSetter>().target = GameObject.FindWithTag("Fruit").transform;
 
 
 

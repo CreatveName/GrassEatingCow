@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         endWait = new WaitForSeconds(endDelay);
         gameOver.enabled = false;
         
+        // Gives us the option in adding an additional player
         playerAmount = PlayerPrefs.GetInt("numOfPlayers");
 
         if(playerAmount == 2)
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnAllPlayers()
     {
+        // Processed used for spawning All players
         for (int i = 0; i < players.Count; i++)
         {
             int p2 = players[i].playerNumber + 1;
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelStart()
     {
+        // Countdown for level starting, after timer runs out it enables te players to move.
         for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();
@@ -93,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelEnd()
     {
+        // Once the timer hits zero, disables movement of the player and pops up the final score and ending buttons.
         for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();

@@ -54,6 +54,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void AddPlayerNum()
     {
+        // Option to add the second player by pressing the + button in the character selection screen
         if(playerTwo)
         {
             PlayerPrefs.SetInt("numOfPlayers", 2);
