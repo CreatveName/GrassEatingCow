@@ -5,7 +5,7 @@ public class AiCrow : MonoBehaviour
 {
     public float chaseSpeed = 300f;
     public float patrolTime = 7.5f;
-    public float maxDistance = 10f; // maximum distance at which the AI can detect the target
+    public float maxDistance = 10f; // Not Needed right now, but will implement later
 
     private Seeker seeker;
     private AIDestinationSetter destinationSetter;
