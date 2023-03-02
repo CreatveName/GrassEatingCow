@@ -22,7 +22,7 @@ namespace Pathfinding {
 
 		{
 
-			GetComponent<AIDestinationSetter>().target = GameObject.FindWithTag("Player").transform;
+
 
 		}
 
@@ -40,7 +40,9 @@ namespace Pathfinding {
 		}
 
 		/// <summary>Updates the AI's destination every frame</summary>
-		void Update () {
+		void Update () 
+		{
+			
 			if (target != null && ai != null) ai.destination = target.position;
 		}
 	}

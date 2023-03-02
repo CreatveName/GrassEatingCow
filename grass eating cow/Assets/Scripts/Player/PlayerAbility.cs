@@ -41,11 +41,11 @@ public class PlayerAbility : MonoBehaviour
     // The player starts to eat grass.
     void Update()
     {
-        if (Input.GetButton(eatButton) && !onScoreZone && !isEating && !isFull)
+        if (Input.GetButtonDown(eatButton) && !onScoreZone && !isEating && !isFull)
         {
             StartCoroutine(StartEat()); 
         }
-        else if(Input.GetButton(eatButton) && onScoreZone && !isEating)
+        else if(Input.GetButtonDown(eatButton) && onScoreZone && !isEating)
         {
             score.currentScore += scoreStored;
             score.scored = true;

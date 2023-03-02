@@ -22,11 +22,18 @@ public class FoodMultiplier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
-
-        if(boolTest)
+        if (other.tag == "Crow")
         {
-            boolTest.foodMultiplier = food.value;
+            Destroy(gameObject, 0.5f);
+        }
+        else
+        {
+            PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
+
+            if(boolTest)
+            {
+                boolTest.foodMultiplier = food.value;
+            }
         }
 
     }

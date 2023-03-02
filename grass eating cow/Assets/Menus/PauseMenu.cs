@@ -24,12 +24,12 @@ public class PauseMenu : MonoBehaviour
         }
     }   
         // Stops the UI in order to pause the game
-        void Pause()
-        {
-            PauseMenuUI.SetActive(true);
-            Time.timeScale = 0f;
-            gameisPaused = true;
-        }
+    public void Pause()
+    {
+        PauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        gameisPaused = true;
+    }
     
 
     public  void Resume()
@@ -47,8 +47,8 @@ public class PauseMenu : MonoBehaviour
     //Reloads the Scene or Heads to the Menu
     public void LoadMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
         Debug.Log("back to menu");
-
     }
 }
