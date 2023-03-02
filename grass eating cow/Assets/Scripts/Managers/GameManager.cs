@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelStart()
     {
-        // IF there is only one player it disables the useage of Player 2's control. IF there is more than one player it enables the controls for Player 2.
+        // Countdown for level starting, after timer runs out it enables te players to move.
         for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();
@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelEnd()
     {
+        // Once the timer hits zero, disables movement of the player and pops up the final score and ending buttons.
         for (int i = 0; i < players.Count; i++)
         {
             players[i].DisableControl();
