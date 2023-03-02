@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1598004666190316645}
   m_Layer: 0
   m_Name: Cow
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,4 +49,5 @@ MonoBehaviour:
   speedT: {fileID: 0}
   eatT: {fileID: 0}
   scoreT: {fileID: 0}
+  stomachS: {fileID: 0}
   picCool: {fileID: 0}
