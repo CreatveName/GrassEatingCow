@@ -24,7 +24,7 @@ public class FoodMultiplier : MonoBehaviour
     {
         if (other.tag == "Crow")
         {
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 0f);
         }
         else
         {

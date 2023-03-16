@@ -18,15 +18,6 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
-		void Start()
-
-		{
-			GetComponent<AIDestinationSetter>().target = GameObject.FindWithTag("Fruit").transform;
-
-
-
-		}
-
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.

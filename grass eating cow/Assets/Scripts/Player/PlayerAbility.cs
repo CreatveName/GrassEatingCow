@@ -46,7 +46,7 @@ public class PlayerAbility : MonoBehaviour
             StartCoroutine(StartEat());
             SoundManagerScript.PlaySound("eating");
         }
-        else if(Input.GetButtonDown(eatButton) && onScoreZone && !isEating)
+        else if(Input.GetButtonDown(eatButton) && onScoreZone)
         {
             score.currentScore += scoreStored;
             score.scored = true;

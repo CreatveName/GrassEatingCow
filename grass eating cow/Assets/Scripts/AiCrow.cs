@@ -3,9 +3,14 @@ using Pathfinding;
 
 public class AiCrow : MonoBehaviour
 {
-    public float chaseSpeed = 300f;
-    public float patrolTime = 7.5f;
-    public float maxDistance = 10f; // Not Needed right now, but will implement later
+    [SerializeField]
+    private float eatSpeed;
+    [SerializeField]
+    private float patrolSpeed;
+    [SerializeField]
+    private float patrolTime;
+    [SerializeField]
+    private float maxDistance; // Not Needed right now, but will implement later
 
     private Seeker seeker;
     private AIDestinationSetter destinationSetter;
@@ -15,6 +20,7 @@ public class AiCrow : MonoBehaviour
     private Patrol patrol;
 
     private enum State { Patrol, Find, Eat }
+    [SerializeField]
     private State state = State.Patrol;
 
     void Start()
@@ -28,13 +34,11 @@ public class AiCrow : MonoBehaviour
 
     void Update()
     {
-        target = GameObject.FindGameObjectWithTag("Food").transform;
         switch (state)
         {
             case State.Patrol:
                 destinationSetter.enabled = false;
-                aiPath.enabled = true;
-                aiPath.maxSpeed = chaseSpeed;
+                aiPath.maxSpeed = patrolSpeed;
                 patrol.enabled = true;
                 patrolTimer += Time.deltaTime;
                 if (patrolTimer >= patrolTime)
@@ -45,29 +49,33 @@ public class AiCrow : MonoBehaviour
                 break;
 
             case State.Find:
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-                if (distanceToTarget <= maxDistance)
+                target = GameObject.FindGameObjectWithTag("Food").transform;
+                patrol.enabled = false;
+  
+                if(target)
                 {
-                    destinationSetter.target = target;
-                    seeker.StartPath(transform.position, target.position, OnPathComplete);
-                    patrol.enabled = false;
+                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                    if (distanceToTarget <= maxDistance)
+                    {
+                        destinationSetter.target = target;
+                        seeker.StartPath(transform.position, target.position, OnPathComplete);
          
-                    state = State.Eat;
+                        state = State.Eat;
+                    }
                 }
-                else
-                {
-                    state = State.Patrol;
-                }
+                
                 break;
 
             case State.Eat:
+                aiPath.maxSpeed = eatSpeed;
 
                 if (aiPath.remainingDistance > aiPath.endReachedDistance)
                 {
                     destinationSetter.enabled = true;
-                    if(!target)
-                        destinationSetter.enabled = false;
-                        state = State.Patrol;
+                }
+                if(aiPath.reachedDestination)
+                {
+                    state = State.Patrol;
                 }
                 break;
         }

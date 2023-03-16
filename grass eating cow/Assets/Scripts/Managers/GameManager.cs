@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
             players[i].DisableControl();
         }
         messageText.text = "Time's Up!";
-        gameOverText.text = "Final Score: " + PlayerPrefs.GetInt("totalScore").ToString();
+        gameOverText.text = "Final Score: " + PlayerPrefs.GetInt("combinedScore").ToString();
         timerText.text = string.Empty;
 
         yield return endWait;
