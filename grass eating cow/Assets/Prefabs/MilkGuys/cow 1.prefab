@@ -114,10 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charStat: {fileID: 11400000, guid: 115719a3ccf4cc442b4865fe2b81592f, type: 2}
-  scoreText: {fileID: 0}
   currentScore: 0
   scored: 0
-  totalScore: 0
 --- !u!114 &4118101473993021057
 MonoBehaviour:
   m_ObjectHideFlags: 0

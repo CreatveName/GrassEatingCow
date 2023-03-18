@@ -11,5 +11,6 @@ public class CharStats : ScriptableObject
     public int milkScore;
     public Sprite charLook;
     public int stomachSpace;
+    public AudioClip charSound;
 
 }

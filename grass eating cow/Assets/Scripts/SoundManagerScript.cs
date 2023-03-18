@@ -9,6 +9,7 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip eatingSound;
     static AudioSource audioSrc;
   
+ 
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,7 +29,7 @@ public class SoundManagerScript : MonoBehaviour
         //almondSound = Resources.Load<AudioClip>("nut");
 
 
-        audioSrc = GetComponent<AudioSource> ();
+       // audioSrc = GetComponent<AudioSource> ();
 
 
     }
@@ -36,15 +37,14 @@ public class SoundManagerScript : MonoBehaviour
 
     
     public static void PlaySound(string clip)
-    {
-        //SoundManagerScript.Playsound ("Sound));         
+    {       
         switch (clip)
         {
            
             
-            case "goat":
-                audioSrc.PlayOneShot (goatSound);
-                break;
+            //case "goat":
+                //audioSrc.PlayOneShot (goatSound);
+                //break;
 
             //case "dinosaur"
             //audioSrc.PlayOneShot (dinoSound);
