@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4118101473993021057}
   - component: {fileID: 2546021653521059729}
   - component: {fileID: 6338861209724735514}
+  - component: {fileID: -2621462901159251205}
   m_Layer: 0
   m_Name: cow 1
   m_TagString: Player
@@ -177,6 +178,21 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!111 &-2621462901159251205
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118101473993021071}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ac0fc41b03212524484c5134e44705d5, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4118101474642699790
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -83.14252
+      value: -66.5
       objectReference: {fileID: 0}
     - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 1551875918181454404, guid: 65ba041b02676884e90d0e71dab16e01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

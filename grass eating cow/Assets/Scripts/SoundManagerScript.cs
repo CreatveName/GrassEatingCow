@@ -18,7 +18,7 @@ public class SoundManagerScript : MonoBehaviour
         eatingSound = Resources.Load<AudioClip>("eating");
 
         // NOTE: Had issues with the sounds playing over each other (ex goat would play while cow is selected. Opted to comment it out for future reference and comeback for now everyone has a generic eating noise) 
-        goatSound = Resources.Load<AudioClip>("goat");
+        //goatSound = Resources.Load<AudioClip>("goat");
 
         //dinoSound = Resources.Load<AudioClip>("dinosaur");
 
@@ -29,7 +29,7 @@ public class SoundManagerScript : MonoBehaviour
         //almondSound = Resources.Load<AudioClip>("nut");
 
 
-       // audioSrc = GetComponent<AudioSource> ();
+       audioSrc = GetComponent<AudioSource> ();
 
 
     }
