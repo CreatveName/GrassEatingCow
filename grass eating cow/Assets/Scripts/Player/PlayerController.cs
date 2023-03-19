@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,16 +13,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     private string hAxis;
     private string vAxis;
-    
-    
-    void Start() 
+    PhotonView view;
+
+
+    void Start()
     {
         player = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         hAxis = "Horizontal" + playerNumber;
         vAxis = "Vertical" + playerNumber;
+        view = GetComponent<PhotonView>();
     }
-    private void Awake() 
+    private void Awake()
     {
         moveSpeed = charStats.moveSpeed;
     }
@@ -38,9 +41,12 @@ public class PlayerController : MonoBehaviour
         */
     }
     // With the new location of X and Y it allows the character to move based off of it's base movespeed.   
-    private void FixedUpdate() 
+    private void FixedUpdate()
+   
+
     {
         player.AddForce(new Vector2(movement.x, movement.y) * moveSpeed, ForceMode2D.Force);
     }
+
 
 }

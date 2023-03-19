@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6575373610950437902}
   - component: {fileID: 6575373610950437905}
+  - component: {fileID: -452572193015625016}
   m_Layer: 0
   m_Name: GameManager 1
   m_TagString: Untagged
@@ -46,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players:
   - playerColor: {r: 1, g: 0, b: 0, a: 0}
-    spawnPoint: {fileID: 0}
     playerNumber: 0
     prefabNumber: 0
     coloredPlayerText: 
@@ -57,3 +57,34 @@ MonoBehaviour:
   - {fileID: 8606527913131828925, guid: cbe3f3d1be659e54798f4b19f9a84963, type: 3}
   - {fileID: 4118101473993021071, guid: 1b23544f33700eb4c94bed2e71859c58, type: 3}
   - {fileID: 4118101473993021071, guid: 1eb9d2f631b4f804ab4a7cb12bda4c05, type: 3}
+  timer: {fileID: 0}
+  messageText: {fileID: 0}
+  timerText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  startDelay: 3
+  endDelay: 3
+  gameOver: {fileID: 0}
+  selectedCharacter: 0
+  scoreText: {fileID: 0}
+--- !u!114 &-452572193015625016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6575373610950437904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
