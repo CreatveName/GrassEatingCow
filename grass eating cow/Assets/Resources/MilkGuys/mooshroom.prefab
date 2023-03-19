@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4118101473993021056}
   - component: {fileID: 4118101473993021057}
   - component: {fileID: 3892985065202991317}
+  - component: {fileID: -1588385770857884531}
   m_Layer: 0
   m_Name: mooshroom
   m_TagString: Player
@@ -114,10 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charStat: {fileID: 11400000, guid: 1e42ab168746d38448275ff54de9daa9, type: 2}
-  scoreText: {fileID: 0}
   currentScore: 0
   scored: 0
-  totalScore: 0
 --- !u!114 &4118101473993021057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +155,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-1588385770857884531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118101473993021071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4118101474642699790
 GameObject:
   m_ObjectHideFlags: 0
