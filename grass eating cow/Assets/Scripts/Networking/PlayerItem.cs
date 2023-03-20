@@ -14,7 +14,6 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     public Color highlightColor;
     public GameObject LeftArrowButton;
     public GameObject RightArrowButton;
-
     ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
     public Image playerAvatar;
     public Sprite[] avatars;
@@ -24,8 +23,6 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     Player player;
     private void Start()
     {
-        playerProperties["playerAvatar"] = 0;
-        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
     public void Awake()
     {
@@ -89,7 +86,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         }
         else
         {
-            playerProperties["playerAvatar"] = 5;
+            playerProperties["playerAvatar"] = 0;
         }
 
     }
