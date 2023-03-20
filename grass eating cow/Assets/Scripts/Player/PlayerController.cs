@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public int playerNumber = 1;
     public CharStats charStats;
-    [SerializeField]
-    private Animator animator;
     public float moveSpeed;
     private Vector2 movement;
     [SerializeField]
@@ -52,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if(soundTimer <= 0)
         {
             ad.Play();
-            float soundCD = Random.Range(1f, soundLimit);
+            float soundCD = Random.Range(10f, 10f + soundLimit);
             soundTimer = soundCD;
         }
     }

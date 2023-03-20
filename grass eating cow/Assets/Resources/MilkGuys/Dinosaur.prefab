@@ -203,11 +203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   charStats: {fileID: 11400000, guid: 01ef5ceed8bccfd418afaa4889581660, type: 2}
-  animator: {fileID: 0}
   moveSpeed: 0
-  player: {fileID: 0}
-  ad: {fileID: 0}
-  soundLimit: 0
+  player: {fileID: 4118101473993021065}
+  ad: {fileID: 8861815474724515280}
+  soundLimit: 15
 --- !u!114 &4118101473993021056
 MonoBehaviour:
   m_ObjectHideFlags: 0

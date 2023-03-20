@@ -18,4 +18,4 @@ MonoBehaviour:
   milkScore: 10
   charLook: {fileID: 21300000, guid: 89d7be1e23045644eb131bf88889ab6c, type: 3}
   stomachSpace: 5
-  charSound: {fileID: 0}
+  charSound: {fileID: 8300000, guid: fce87780a3b2f4643b4fbd62d183ba2b, type: 3}

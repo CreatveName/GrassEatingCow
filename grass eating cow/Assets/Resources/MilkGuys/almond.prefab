@@ -287,11 +287,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   charStats: {fileID: 11400000, guid: cbfd08c4c6fc43a43a585089b0b1c3e9, type: 2}
-  animator: {fileID: 0}
   moveSpeed: 0
-  player: {fileID: 0}
-  ad: {fileID: 0}
-  soundLimit: 0
+  player: {fileID: 8606527913131828923}
+  ad: {fileID: 8003853718488065390}
+  soundLimit: 12
 --- !u!114 &8606527913131828914
 MonoBehaviour:
   m_ObjectHideFlags: 0
