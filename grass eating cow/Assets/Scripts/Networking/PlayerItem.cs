@@ -12,15 +12,20 @@ public class PlayerItem : MonoBehaviourPunCallbacks
 
     Image backgroundImage;
     public Color highlightColor;
-    public GameObject leftArrowButton;
-    public GameObject rightArrowbutton;
+    public GameObject LeftArrowButton;
+    public GameObject RightArrowButton;
 
     ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
     public Image playerAvatar;
     public Sprite[] avatars;
 
     Player player;
-    private void Awake()
+    private void Start()
+    {
+        playerProperties["playerAvatar"] = 1;
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+    }
+ public void Awake()
     {
         backgroundImage = GetComponent<Image>();
     }
@@ -33,12 +38,11 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     public void ApplyLocalChanges()
     {
         backgroundImage.color = highlightColor;
-        leftArrowButton.SetActive(true);
-        rightArrowbutton.SetActive(false);
+        LeftArrowButton.SetActive(true);
+        RightArrowButton.SetActive(false);
     }
     public void OnClickLeftArrow()
     {
-
         if ((int)playerProperties["playerAvatar"] == 0)
         {
             playerProperties["playerAvatar"] = avatars.Length - 1;
@@ -52,7 +56,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     }
 
     public void OnClickRightArrow()
-    {
+    { 
         if ((int)playerProperties["playerAvatar"] == avatars.Length - 1)
         {
             playerProperties["playerAvatar"] = 0;
@@ -63,7 +67,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
             playerProperties["playerAvatar"] = (int)playerProperties["playerAvatar"] - 1;
         }
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
-
+        Debug.Log("Hit");
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
