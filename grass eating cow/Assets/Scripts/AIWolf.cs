@@ -74,8 +74,6 @@ public class AIWolf : MonoBehaviour
                 break;
 
             case State.Find:
-                //float findTimer = 2f;
-
                 anim.SetBool("isFinding", true);
                 if(target)
                 {
