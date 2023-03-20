@@ -5,20 +5,30 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public List<MilkManager> players;
-    public GameObject[] milkProducer;
-    public LevelTimer timer;
-    public TextMeshProUGUI messageText;  
-    public TextMeshProUGUI timerText; 
-    public TextMeshProUGUI gameOverText; 
-    public float startDelay = 3f;         
-    public float endDelay = 3f;   
+    [SerializeField]
+    private List<MilkManager> players;
+    [SerializeField]
+    private GameObject[] milkProducer;
+    [SerializeField]
+    private LevelTimer timer;
+    [SerializeField]
+    private TextMeshProUGUI messageText;  
+    [SerializeField]
+    private TextMeshProUGUI timerText; 
+    [SerializeField]
+    private TextMeshProUGUI gameOverText; 
+    [SerializeField]
+    private float startDelay = 3f;         
+    [SerializeField]
+    private float endDelay = 3f;   
     private WaitForSeconds startWait;     
     private WaitForSeconds endWait;  
     private bool levelStarted;
-    public Canvas gameOver;
+    [SerializeField]
+    private Canvas gameOver;
     private int playerAmount;
-    public int selectedCharacter;
+    [SerializeField]
+    private int selectedCharacter;
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
