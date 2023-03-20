@@ -739,14 +739,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 1839788953}
-  highlightColor: {r: 0.023517974, g: 0.0044498947, b: 0.7075472, a: 0}
   LeftArrowButton: {fileID: 1534118987}
   RightArrowButton: {fileID: 718945244}
   playerAvatar: {fileID: 1996128139}
   avatars:
   - {fileID: 21300000, guid: 89d7be1e23045644eb131bf88889ab6c, type: 3}
+  - {fileID: 21300000, guid: 9f27083b056a92440823d2c5d5866a22, type: 3}
   - {fileID: 21300000, guid: d5e8041b93f46a54a84c99d267c1893f, type: 3}
   - {fileID: 21300000, guid: 2fef26a096c81e740b6c720a78bf4399, type: 3}
   - {fileID: 21300000, guid: 9820429dd77e9e848b9aef0ae5762f7a, type: 3}
-  - {fileID: 21300000, guid: 9f27083b056a92440823d2c5d5866a22, type: 3}
-  can: {fileID: 0}

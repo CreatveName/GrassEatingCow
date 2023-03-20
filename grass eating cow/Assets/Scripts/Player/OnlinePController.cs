@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerController : MonoBehaviour
+public class OnlinePController : MonoBehaviourPunCallbacks
 {
     public int playerNumber = 1;
     public CharStats charStats;
@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private float soundLimit;
     private float soundTimer;
 
-
     void Start()
     {
         hAxis = "Horizontal" + playerNumber;
@@ -36,8 +35,11 @@ public class PlayerController : MonoBehaviour
     // Tracks the players X and Y values and updates it constantly.
     void Update()
     {
-        movement.x = Input.GetAxisRaw(hAxis);
-        movement.y = Input.GetAxisRaw(vAxis);
+        if(view.IsMine)
+        {
+            movement.x = Input.GetAxisRaw(hAxis);
+            movement.y = Input.GetAxisRaw(vAxis);
+        }
     }
     // With the new location of X and Y it allows the character to move based off of it's base movespeed.   
     private void FixedUpdate()

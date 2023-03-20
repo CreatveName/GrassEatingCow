@@ -14,10 +14,16 @@ public class ScoreZone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
+        OnlinePAbility bools = other.GetComponent<OnlinePAbility>();
 
         if(boolTest)
         {
             boolTest.onScoreZone = true;
+        }
+
+        if(bools)
+        {
+            bools.onScoreZone = true;
         }
 
     }
@@ -25,10 +31,16 @@ public class ScoreZone : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) 
     {
         PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
+        OnlinePAbility bools = other.GetComponent<OnlinePAbility>();
 
         if(boolTest)
         {
             boolTest.onScoreZone = false;
+        }
+
+        if(bools)
+        {
+            bools.onScoreZone = false;
         }
     }
 }

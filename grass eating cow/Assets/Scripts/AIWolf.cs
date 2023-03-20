@@ -35,7 +35,7 @@ public class AIWolf : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == "Online")
         {
             target = other.gameObject.transform;
         }
@@ -46,7 +46,7 @@ public class AIWolf : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == "Online")
         {
             target = other.gameObject.transform;
         }
@@ -61,6 +61,11 @@ public class AIWolf : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerController>().Stall();
+        }
+
+        if(other.gameObject.tag == "Online")
+        {
+            other.gameObject.GetComponent<OnlinePController>().Stall();
         }
     }
     

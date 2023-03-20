@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 
-public class PlayerScore : MonoBehaviour
+public class OnlinePScore : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private CharStats charStat;
@@ -34,19 +34,25 @@ public class PlayerScore : MonoBehaviour
             SoundManagerScript.PlaySound("bell");
             totalScore = currentScore * milkScore;
 
-            AddTime(totalScore);
+            this.photonView.RPC(nameof(AddTime), RpcTarget.All, totalScore);
 
             int combinedScore = totalScore + PlayerPrefs.GetInt("combinedScore");
-            PlayerPrefs.SetInt("combinedScore", combinedScore);
-            
+     
+            this.photonView.RPC(nameof(AddScore), RpcTarget.All, combinedScore);
             currentScore = 0;
             scored = false;
         }
     }
-
+    [PunRPC]
     void AddTime(int score)
     {
         int addTime = score / milkScore; //Balances out the time add ons for pets with more score per food
         tim.timer += addTime;
+    }
+
+    [PunRPC]
+    void AddScore(int score)
+    {
+        OnlineGameManager.onlineScore += score;
     }
 }

@@ -250,6 +250,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 119749336}
     - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 980537179}
@@ -265,28 +269,14 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 2026293399}
-    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
-      propertyPath: milkProducer.Array.data[0]
-      value: 
-      objectReference: {fileID: 4118101473993021071, guid: 740ca59b6a27eb9498e154e266ac67cf, type: 3}
-    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
-      propertyPath: milkProducer.Array.data[1]
-      value: 
-      objectReference: {fileID: 8606527913131828925, guid: ed344647fe0ba824091b60afbbc85c4e, type: 3}
-    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
-      propertyPath: milkProducer.Array.data[2]
-      value: 
-      objectReference: {fileID: 8606527913131828925, guid: 8f1f8e0dd91a87747a90503f7e6d76ad, type: 3}
-    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
-      propertyPath: milkProducer.Array.data[3]
-      value: 
-      objectReference: {fileID: 4118101473993021071, guid: 824a4f08ad39c8347b911d59fb856f2e, type: 3}
-    - target: {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
-      propertyPath: milkProducer.Array.data[4]
-      value: 
-      objectReference: {fileID: 4118101473993021071, guid: 03c68c741a751d64f9150b725cd35442, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6575373610950437905, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+--- !u!1 &81033902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6575373610950437904, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
+  m_PrefabInstance: {fileID: 81033901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &119749333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2706,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6575373610950437902, guid: 0fbe05f3a96b8404cbdcda709eaca124, type: 3}
   m_PrefabInstance: {fileID: 81033901}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &951794589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81033902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf84e47fbc3c2d45bd0fbfbb8de64a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  milkProducer:
+  - {fileID: 4118101473993021071, guid: d27b006c6bf63b949a7290ee2fd7bedc, type: 3}
+  - {fileID: 8606527913131828925, guid: acd63b4b6a905944cba657799fccba50, type: 3}
+  - {fileID: 8606527913131828925, guid: cbe3f3d1be659e54798f4b19f9a84963, type: 3}
+  - {fileID: 4118101473993021071, guid: 1b23544f33700eb4c94bed2e71859c58, type: 3}
+  - {fileID: 4118101473993021071, guid: 1eb9d2f631b4f804ab4a7cb12bda4c05, type: 3}
+  timer: {fileID: 25208327}
+  messageText: {fileID: 165205579}
+  timerText: {fileID: 896526813}
+  gameOverText: {fileID: 2026293399}
+  startDelay: 3
+  endDelay: 3
+  gameOver: {fileID: 119749336}
+  selectedCharacter: 0
+  scoreText: {fileID: 980537179}
+  spawnPoints:
+  - {fileID: 1148636564}
 --- !u!1 &980537177
 GameObject:
   m_ObjectHideFlags: 0

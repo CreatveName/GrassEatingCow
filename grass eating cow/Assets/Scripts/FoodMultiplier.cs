@@ -29,10 +29,16 @@ public class FoodMultiplier : MonoBehaviour
         else
         {
             PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
+            OnlinePAbility bools = other.GetComponent<OnlinePAbility>();
 
             if(boolTest)
             {
                 boolTest.foodMultiplier = food.value;
+            }
+
+            if(bools)
+            {
+                bools.foodMultiplier = food.value;
             }
         }
 
@@ -41,7 +47,14 @@ public class FoodMultiplier : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) 
     {
         PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
-        if(boolTest.isEating)
+        OnlinePAbility bools = other.GetComponent<OnlinePAbility>();
+
+        if(boolTest && boolTest.isEating)
+        {
+            Destroy(gameObject, 0f);
+        }
+
+        if(bools && bools.isEating)
         {
             Destroy(gameObject, 0f);
         }
