@@ -36,6 +36,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     }
     public void ApplyLocalChanges()
     {
+        // Assign highlight color here before this function, another function is changing highlight color.
         backgroundImage.color = highlightColor;
         LeftArrowButton.SetActive(true);
         RightArrowButton.SetActive(true);

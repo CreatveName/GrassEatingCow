@@ -46,6 +46,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         roomPanel.SetActive(true);
         roomName.text = " Room Name: " + PhotonNetwork.CurrentRoom.Name;
         UpdatePlayerList();
+        // Update function, might be the reason it goes we have the error since when this updates, highlight color might go back to null.
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -116,6 +117,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             if (player.Value == PhotonNetwork.LocalPlayer)
             {
                 newplayerItem.ApplyLocalChanges();
+                // Update function
             }
             playerItemsList.Add(newplayerItem);
         }
