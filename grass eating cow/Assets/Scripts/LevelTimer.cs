@@ -14,6 +14,22 @@ public class LevelTimer : MonoBehaviour
     public bool timerStarted = false;
     public TimeSpan timePlaying;
 
+    public static LevelTimer instance;
+
+    private void Awake() 
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+    }
+
     void Start()
     {
         timer = timeLeft;
