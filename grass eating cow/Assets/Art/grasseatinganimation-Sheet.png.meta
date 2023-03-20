@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25f972b3978720f4babc375b79ec331b
-      internalID: 495521531
+      spriteID: 57f22dd633572a64e92736cefe895c54
+      internalID: -103665637
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd69b4cedb8ce4d41861cfaa7de0fead
-      internalID: 204524923
+      spriteID: ac6314a666554214e89c4d763bc50f2b
+      internalID: -1382695135
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da536f5740f68de4cb69e2df1b29f1af
-      internalID: 955713504
+      spriteID: 72e0eba4fd15b5448a884b17369a5e67
+      internalID: 1210599087
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9859544c3ae0808469e447173f6a1084
-      internalID: 1449031003
+      spriteID: 32e3780a0bbcaa340bed5b9de34c50a3
+      internalID: 1863041473
       vertices: []
       indices: 
       edges: []
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c58ad381420f7c419503e999cc6106b
-      internalID: 422719935
+      spriteID: d3d1f9473cf2df64a87500321f9fe763
+      internalID: -61902647
       vertices: []
       indices: 
       edges: []
@@ -220,11 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grasseatinganimation-Sheet_0: 495521531
-      grasseatinganimation-Sheet_4: 422719935
-      grasseatinganimation-Sheet_3: 1449031003
-      grasseatinganimation-Sheet_2: 955713504
-      grasseatinganimation-Sheet_1: 204524923
+      grasseatinganimation-Sheet_0: -103665637
+      grasseatinganimation-Sheet_4: -61902647
+      grasseatinganimation-Sheet_3: 1863041473
+      grasseatinganimation-Sheet_2: 1210599087
+      grasseatinganimation-Sheet_1: -1382695135
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
