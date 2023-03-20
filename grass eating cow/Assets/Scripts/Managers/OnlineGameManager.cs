@@ -43,7 +43,6 @@ public class OnlineGameManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             return;
         }
         SetScoreText("0");

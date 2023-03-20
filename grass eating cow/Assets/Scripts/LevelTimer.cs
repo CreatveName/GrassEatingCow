@@ -25,7 +25,6 @@ public class LevelTimer : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             return;
         }
     }

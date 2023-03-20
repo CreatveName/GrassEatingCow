@@ -17,7 +17,20 @@ public class randomSpawner : MonoBehaviour
     private float maxY;
     private float minY;
     private float SpawnTime;
+    randomSpawner instance;
     
+    private void Awake() 
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            return;
+        }
+    }
 
     private void Start() 
     {
