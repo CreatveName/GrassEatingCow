@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Goodbye :(");
+        Debug.Log("Goodbye");
 
     }
     //Reloads the Scene or Heads to the Menu
