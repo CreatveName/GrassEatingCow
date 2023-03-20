@@ -102,6 +102,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             Destroy(item.gameObject);
         }
         playerItemsList.Clear();
+        
         if (PhotonNetwork.CurrentRoom == null)
         {
             return;

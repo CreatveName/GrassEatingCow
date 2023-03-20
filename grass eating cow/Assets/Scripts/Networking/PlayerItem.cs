@@ -69,7 +69,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         Debug.Log("Hit");
     }
 
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable playerAvatar)
     {
       if( player == targetPlayer)
         {
