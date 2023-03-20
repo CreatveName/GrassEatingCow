@@ -14,8 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelect.unity
     guid: 0c141b90082a8de40aa119e25a93af83
+  - enabled: 1
+    path: Assets/Scenes/ConnectToServer.unity
+    guid: 45ecc64bbb195924b88476d8b5778d44
   - enabled: 0
-    path: Assets/Scenes/Loading.unity
+    path: 
     guid: c8e52f2660f0c1e47946c3f385be30b7
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
