@@ -55,6 +55,14 @@ public class AIWolf : MonoBehaviour
             target = null;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().Stall();
+        }
+    }
     
 
     void Update()
@@ -104,6 +112,11 @@ public class AIWolf : MonoBehaviour
                 if (aiPath.remainingDistance > aiPath.endReachedDistance)
                 {
                     aiPath.maxSpeed = chaseSpeed;
+                }
+
+                if(aiPath.reachedDestination)
+                {
+                    state = State.Idle;
                 }
                 break;
         }

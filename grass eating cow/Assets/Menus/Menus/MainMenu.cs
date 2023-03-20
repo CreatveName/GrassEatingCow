@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void CharSelectScreen()
     {
         SceneManager.LoadScene("CharacterSelect"); //plays games from start menu
       
+    }
+    public void StartSinglePlayer()
+    {
+        SceneManager.LoadScene("Cut1");
     }
     public void QuitGame()
     {

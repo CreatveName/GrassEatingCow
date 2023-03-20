@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         {
             players[i].DisableControl();
         }
-        messageText.text = "Level Start!";
+        messageText.text = "Make Milk or face the farmer's WRATH!!!";
         timerText.text = string.Empty;
         yield return startWait;
 

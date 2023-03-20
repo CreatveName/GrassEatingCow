@@ -55,5 +55,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Stall()
+    {
+        StartCoroutine(Hurt());
+    }
+
+    IEnumerator Hurt()
+    {
+        moveSpeed = 0f;
+        yield return new WaitForSeconds(3f);
+        moveSpeed = charStats.moveSpeed;
+    }
+
 
 }
