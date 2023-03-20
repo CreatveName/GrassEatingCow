@@ -9,18 +9,20 @@ public class PlayerAbility : MonoBehaviour
     private CharStats charStats;
     [SerializeField]
     private ProgressBar slider;
+    [SerializeField]
     private PlayerController player;
+    [SerializeField]
     private PlayerScore score;
     public bool isEating;
     private float eatTime;
     private int scoreStored;
     public bool onScoreZone;
     private string eatButton;
+    [SerializeField]
     private Animator animator;
     public int foodMultiplier;
     private bool isFull;
     private int stomachLvl;
-    private float scoreDelay = 0.5f;
 
     // Eat time depends on the character that was selected from the character. 
     private void Awake() 
@@ -33,9 +35,6 @@ public class PlayerAbility : MonoBehaviour
     }
     void Start()
     {
-        player = GetComponent<PlayerController>();
-        score = GetComponent<PlayerScore>();
-        animator = GetComponent<Animator>();
         eatButton = "Fire" + playerNumber;
     }
     // The player starts to eat grass.

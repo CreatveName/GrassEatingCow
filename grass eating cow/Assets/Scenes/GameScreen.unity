@@ -1981,7 +1981,7 @@ MonoBehaviour:
   - {fileID: 134422434}
   - {fileID: 1435674374}
   - {fileID: 406604411}
-  delay: 1
+  delay: 0.25
 --- !u!114 &806421675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,7 +1996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatSpeed: 6
   patrolSpeed: 3
-  patrolTime: 10
+  patrolTime: 5
   maxDistance: 25
   state: 0
 --- !u!50 &806421676
@@ -2019,7 +2019,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &806421677
 CircleCollider2D:
   m_ObjectHideFlags: 0
