@@ -22,7 +22,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     Player player;
     private void Start()
     {
-        playerProperties["playerAvatar"] = 1;
+        playerProperties["playerAvatar"] = 5;
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
  public void Awake()
@@ -87,7 +87,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         }
         else
         {
-            playerProperties["playerAvatar"] = 0;
+            playerProperties["playerAvatar"] = 5;
         }
 
     }
