@@ -15,6 +15,7 @@ public class PlayerAbility : MonoBehaviour
     private PlayerScore score;
     public bool isEating;
     private float eatTime;
+    [SerializeField]
     private int scoreStored;
     public bool onScoreZone;
     private string eatButton;
@@ -32,21 +33,21 @@ public class PlayerAbility : MonoBehaviour
         foodMultiplier = 1;
         stomachLvl = 0;
         slider.sliderMax = charStats.stomachSpace;
+        
     }
-    void Start()
+    private void Start() 
     {
         eatButton = "Fire" + playerNumber;
     }
     // The player starts to eat grass.
     void Update()
     {
-        if (Input.GetButtonDown(eatButton) && !onScoreZone && !isEating && !isFull)
+        if (Input.GetButtonDown(eatButton) && !onScoreZone && !isEating && !isFull) //Makes eat coroutine start only once player is not in the score area, not already eating (prevents spam eating), and not full
         {
             StartCoroutine(StartEat());
-            SoundManagerScript.PlaySound("eating");
             
         }
-        else if(Input.GetButtonDown(eatButton) && onScoreZone)
+        else if(Input.GetButtonDown(eatButton) && onScoreZone) //checks if player is on score zone to initiate scoring the point rather than eating
         {
             score.currentScore += scoreStored;
             score.scored = true;
@@ -71,7 +72,8 @@ public class PlayerAbility : MonoBehaviour
         animator.SetBool("isEating", true);
         float speed = player.moveSpeed; //preserves original movespeed (because we have different movespeeds for different characters)
         player.moveSpeed = 0;
-        scoreStored = 1 * foodMultiplier;
+        scoreStored += 1 * foodMultiplier;
+        SoundManagerScript.PlaySound("eating");
         yield return new WaitForSeconds(eatTime);
         stomachLvl++;
         slider.IncrementProgress(stomachLvl);
