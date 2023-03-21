@@ -8,11 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelTimer : MonoBehaviour
 {
-    
-    public float timeLeft = 60;
+    [SerializeField]
+    private float timeLeft = 60;
     public float timer;
     public bool timerStarted = false;
     public TimeSpan timePlaying;
+    [SerializeField]
+    private float speedFactor;
 
     public static LevelTimer instance;
 
@@ -32,13 +34,15 @@ public class LevelTimer : MonoBehaviour
     void Start()
     {
         timer = timeLeft;
+        speedFactor = 1;
     }
 
     void Update()
     {
+        speedFactor += Time.deltaTime/20;
         if (timerStarted)
         {
-            timer -= Time.deltaTime;
+            timer -= Time.deltaTime * speedFactor;
             timePlaying = TimeSpan.FromSeconds(timer);
         }
         

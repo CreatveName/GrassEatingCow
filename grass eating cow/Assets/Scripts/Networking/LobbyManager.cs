@@ -7,25 +7,32 @@ using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    public InputField roomInputField;
-    public GameObject lobbyPanel;
-    public GameObject roomPanel;
-    public Text roomName;
+    [SerializeField]
+    private InputField roomInputField;
+    [SerializeField]
+    private GameObject lobbyPanel;
+    [SerializeField]
+    private GameObject roomPanel;
+    [SerializeField]
+    private Text roomName;
     [SerializeField]
     private RoomItem roomItemPreFab;
     [SerializeField]
     List<RoomItem> roomItemsList = new List<RoomItem>();
-    public Transform contentObject;
-
-    public float timeBetweenUpdates = 1.5f;
+    [SerializeField]
+    private Transform contentObject;
+    [SerializeField]
+    private float timeBetweenUpdates = 1.5f;
     [SerializeField]
     private float nextUpdateTime;
-
-    public List<PlayerItem> playerItemsList = new List<PlayerItem>();
-    public PlayerItem playerItemPrefab;
-    public Transform playerItemParent;
-
-    public GameObject playButton;
+    [SerializeField]
+    private List<PlayerItem> playerItemsList = new List<PlayerItem>();
+    [SerializeField]
+    private PlayerItem playerItemPrefab;
+    [SerializeField]
+    private Transform playerItemParent;
+    [SerializeField]
+    private GameObject playButton;
    
     
     private void Start()
@@ -139,7 +146,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if(PhotonNetwork.IsMasterClient&& PhotonNetwork.CurrentRoom.PlayerCount>= 2)
+        if(PhotonNetwork.IsMasterClient&& PhotonNetwork.CurrentRoom.PlayerCount>= 1)
         {
 
             playButton.SetActive(true);

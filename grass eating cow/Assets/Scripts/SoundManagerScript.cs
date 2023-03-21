@@ -25,11 +25,6 @@ public class SoundManagerScript : MonoBehaviour
     {       
         switch (clip)
         {
-                      
-            case "goat":
-                audioSrc.PlayOneShot (goatSound);
-                break;
-
             case "bell":
                 audioSrc.PlayOneShot (scoreSound);
                 break;

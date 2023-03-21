@@ -8,18 +8,24 @@ using Photon.Realtime;
 public class PlayerItem : MonoBehaviourPunCallbacks
 {
 
-    public Text playerName;
+    [SerializeField]
+    private Text playerName;
 
     Image backgroundImage;
-    public GameObject LeftArrowButton;
-    public GameObject RightArrowButton;
+    [SerializeField]
+    private GameObject LeftArrowButton;
+    [SerializeField]
+    private GameObject RightArrowButton;
     ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
-    public Image playerAvatar;
-    public Sprite[] avatars;
+    [SerializeField]
+    private Image playerAvatar;
+    [SerializeField]
+    private Sprite[] avatars;
 
     Player player;
     private void Start()
     {
+        PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
     public void Awake()
     {
@@ -37,7 +43,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         LeftArrowButton.SetActive(true);
         RightArrowButton.SetActive(true);
     }
-    public void OnClickLeftArrow()
+    public void OnClickLeftArrow() //Similar to our character selection script, but implemented this way for more ditinction and easier for use to differentiate for Photon/Singleplayer
     {
         if ((int)playerProperties["playerAvatar"] == 0)
         {
@@ -56,7 +62,6 @@ public class PlayerItem : MonoBehaviourPunCallbacks
         if ((int)playerProperties["playerAvatar"] == avatars.Length - 1)
         {
             playerProperties["playerAvatar"] = 0;
-
         }
         else
         {

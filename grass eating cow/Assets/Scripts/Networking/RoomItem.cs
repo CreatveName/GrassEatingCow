@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class RoomItem : MonoBehaviour
 {
-    public Text roomName;
+    [SerializeField]
+    private Text roomName;
     LobbyManager manager;
 
     private void Start()

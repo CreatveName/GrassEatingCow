@@ -5,8 +5,9 @@ using Photon.Pun;
 
 public class OnlinePController : MonoBehaviourPunCallbacks
 {
-    public int playerNumber = 1;
-    public CharStats charStats;
+    private int playerNum = 1;
+    [SerializeField]
+    private CharStats charStats;
     public float moveSpeed;
     private Vector2 movement;
     [SerializeField]
@@ -22,8 +23,8 @@ public class OnlinePController : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        hAxis = "Horizontal" + playerNumber;
-        vAxis = "Vertical" + playerNumber;
+        hAxis = "Horizontal" + playerNum;//have to keep player numbers in because of input manager
+        vAxis = "Vertical" + playerNum;
         view = GetComponent<PhotonView>();
         soundTimer = soundLimit;
     }

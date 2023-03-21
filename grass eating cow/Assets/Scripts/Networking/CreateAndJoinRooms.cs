@@ -7,8 +7,10 @@ using Photon.Pun;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
-    public InputField createInput;
-    public InputField joinInput;
+    [SerializeField]
+    private InputField createInput;
+    [SerializeField]
+    private InputField joinInput;
 
     public void CreateRoom()
     {

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public GameObject[] milkProducer;
-    public int selectedCharacter = 0;
+    [SerializeField]
+    private GameObject[] milkProducer;
+    [SerializeField]
+    private int selectedCharacter = 0;
     private LoadStats ldS;
     [SerializeField]
     private int playerNum;

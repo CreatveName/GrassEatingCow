@@ -4,10 +4,9 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 
+//Have to make online versions of a lot of our scripts to implement Photon functions without ruining single player :D
 public class OnlineGameManager : MonoBehaviour
 {
-    [SerializeField]
-    private List<MilkManager> players;
     [SerializeField]
     private GameObject[] milkProducer;
     [SerializeField]
@@ -33,6 +32,8 @@ public class OnlineGameManager : MonoBehaviour
     private Transform[] spawnPoints;
     public static OnlineGameManager instance;
     public static int onlineScore = 0;
+    [SerializeField]
+    PhotonView view;
     
     private void Awake() 
     {
@@ -45,7 +46,7 @@ public class OnlineGameManager : MonoBehaviour
             instance = this;
             return;
         }
-        SetScoreText("0");
+        SetScoreText("0");//should already be set to 0, but just in case
     }
     
     void Start()
@@ -55,7 +56,7 @@ public class OnlineGameManager : MonoBehaviour
         gameOver.enabled = false;
 
         SpawnAllPlayers();
-        StartCoroutine(LevelStart());
+        StartCoroutine(LevelStart()); 
     }
 
     void SetScoreText(string st)
@@ -92,18 +93,11 @@ public class OnlineGameManager : MonoBehaviour
     private IEnumerator LevelStart()
     {
         // Countdown for level starting, after timer runs out it enables te players to move.
-        for (int i = 0; i < players.Count; i++)
-        {
-            players[i].DisableControl();
-        }
+
         messageText.text = "Make Milk or face the farmer's WRATH!!!";
         timerText.text = string.Empty;
         yield return startWait;
 
-        for (int i = 0; i < players.Count; i++)
-        {
-            players[i].EnableControl();
-        }
         messageText.text = string.Empty;
         timer.timerStarted = true;
         levelStarted = true;
@@ -112,10 +106,7 @@ public class OnlineGameManager : MonoBehaviour
     private IEnumerator LevelEnd()
     {
         // Once the timer hits zero, disables movement of the player and pops up the final score and ending buttons.
-        for (int i = 0; i < players.Count; i++)
-        {
-            players[i].DisableControl();
-        }
+
         messageText.text = "Time's Up!";
         gameOverText.text = "Final Score: " + onlineScore.ToString();
         timerText.text = string.Empty;
@@ -123,8 +114,13 @@ public class OnlineGameManager : MonoBehaviour
         yield return endWait;
         messageText.text = string.Empty;
         gameOver.enabled = true;
+        yield return 1.5f;
+        this.view.RPC(nameof(Freeze), RpcTarget.All); //Have to do after a moment to prevent client sided freezes preventing menu from popping up
         //CANVAS/END MENU POP UP CODE HERE
     }
-
-
+    [PunRPC]
+    void Freeze()
+    {
+        Time.timeScale = 0;
+    }
 }

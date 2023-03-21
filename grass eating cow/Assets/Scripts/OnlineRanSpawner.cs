@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class randomSpawner : MonoBehaviour
+public class OnlineRanSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] foodtoSpawn;
@@ -17,6 +18,7 @@ public class randomSpawner : MonoBehaviour
     private float maxY;
     private float minY;
     private float SpawnTime;
+
     private void Start() 
     {
         minY = MinYMaxX.transform.position.y;
@@ -42,7 +44,7 @@ public class randomSpawner : MonoBehaviour
         float y = Random.Range(minY, maxY);
         int spawnNum = Random.Range(0, foodtoSpawn.Length); 
         Vector2 pos = new Vector2(x, y);
-        Instantiate(foodtoSpawn[spawnNum], pos, transform.rotation);//might add probability chances later to lower chance of better fruit
+        PhotonNetwork.Instantiate(foodtoSpawn[spawnNum].name, pos, transform.rotation);//might add probability chances later to lower chance of better fruit
     }
 }
 

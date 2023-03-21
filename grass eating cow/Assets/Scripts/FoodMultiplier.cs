@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodMultiplier : MonoBehaviour
 {
-    private Collider2D coll;
+    [SerializeField]
     private SpriteRenderer sprite;
     private int spawnLife;
     [SerializeField]
@@ -12,8 +12,6 @@ public class FoodMultiplier : MonoBehaviour
     // Renders the sprites for the food to spawn in and be destroyed after a while
     private void Start() 
     {
-        coll = GetComponent<CircleCollider2D>();
-        sprite = GetComponent<SpriteRenderer>();
         sprite.sprite = food.foodLook;
         spawnLife = food.spawnTime;
 

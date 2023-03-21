@@ -11,12 +11,15 @@ public class AiCrow : MonoBehaviour
     private float patrolTime;
     [SerializeField]
     private float maxDistance; // Not Needed right now, but will implement later
-
+    [SerializeField]
     private Seeker seeker;
+    [SerializeField]
     private AIDestinationSetter destinationSetter;
+    [SerializeField]
     private AIPath aiPath;
     private Transform target;
     private float patrolTimer = 0f;
+    [SerializeField]
     private Patrol patrol;
 
     private enum State { Patrol, Find, Eat }
@@ -25,15 +28,12 @@ public class AiCrow : MonoBehaviour
 
     void Start()
     {
-        seeker = GetComponent<Seeker>();
-        destinationSetter = GetComponent<AIDestinationSetter>();
-        aiPath = GetComponent<AIPath>();
-        patrol = GetComponent<Patrol>();
         destinationSetter.enabled = false;
     }
 
     void Update()
     {
+        //summary: Crow patrols around map then searches for food, if food found speed up to eat food, then go back to patroling
         switch (state)
         {
             case State.Patrol:

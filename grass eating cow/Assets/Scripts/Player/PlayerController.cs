@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         soundTimer -= Time.fixedDeltaTime;
 
-        if(soundTimer <= 0)
+        if(soundTimer <= 0) //Added sound in this script because it was relatively simple
         {
             ad.Play();
             float soundCD = Random.Range(10f, 10f + soundLimit);

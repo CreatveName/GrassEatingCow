@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameisPaused = false;
-    public GameObject PauseMenuUI;
+    private static bool gameisPaused = false;
+    [SerializeField]
+    private GameObject PauseMenuUI;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +18,7 @@ public class PauseMenu : MonoBehaviour
             if (gameisPaused)
             {
                 Resume();
+                gameisPaused = false;
             }
             else
             {
@@ -30,7 +33,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         gameisPaused = true;
     }
-    
+
+    public void PauseOnline() //We decided it would be better for other players to stay playing if one person wants to pause/leave
+    {
+        PauseMenuUI.SetActive(true);
+        gameisPaused = true;
+    }
 
     public  void Resume()
     {
@@ -50,5 +58,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
         Debug.Log("back to menu");
+    }
+
+    public void Disconnect()
+    {
+        PhotonNetwork.Disconnect();
     }
 }

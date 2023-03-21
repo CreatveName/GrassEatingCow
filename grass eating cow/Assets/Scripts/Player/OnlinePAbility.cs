@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 public class OnlinePAbility : MonoBehaviourPunCallbacks
 {
-    public int playerNumber = 1;
+    private int playerNum = 1;
     [SerializeField]
     private CharStats charStats;
     [SerializeField]
@@ -38,7 +38,7 @@ public class OnlinePAbility : MonoBehaviourPunCallbacks
     }
     private void Start() 
     {
-        eatButton = "Fire" + playerNumber;
+        eatButton = "Fire" + playerNum;
     }
     // The player starts to eat grass.
     void Update()

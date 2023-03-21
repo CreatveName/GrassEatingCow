@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class ScoreZone : MonoBehaviour
 {
+    [SerializeField]
     private Collider2D coll;
-
-    private void Start() 
-    {
-        coll = GetComponent<CircleCollider2D>();
-    }
-
     private void OnTriggerEnter2D(Collider2D other) 
     {
         PlayerAbility boolTest = other.GetComponent<PlayerAbility>();
